@@ -1,13 +1,15 @@
+//d define url
+const url = "https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json";
 // Build the metadata panel
 function buildMetadata(sample) {
-  d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
+  d3.json(url).then((data) => {
 
 
     // get the metadata field
     let metadata = data.metadata;
 
     // Filter the metadata for the object with the desired sample number
-    let results = metadata.filter(item => item.id == parseInt(sample));
+    let results = metadata.filter(item => item.id === parseInt(sample));
     let firist_result = results[0];
     // Use d3 to select the panel with id of `#sample-metadata`
 
