@@ -73,9 +73,9 @@ function buildCharts(sample) {
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
     // Build a Bar Chart of Top 10 
-    let otuidSliced = otuIDs.slice(0,10).reverse();
-    let samplevaluesSliced = sampleValues.slice(0,10).reverse();
-    let outlabelsSliced = otuLabels.slice(0,10).reverse();
+    let otuidSliced = otu_ids.slice(0,10).reverse();
+    let samplevaluesSliced = sample_values.slice(0,10).reverse();
+    let outlabelsSliced = otu_labels.slice(0,10).reverse();
     console.log(outlabelsSliced, samplevaluesSliced, outlabelsSliced)
  
     // Build a Bubble Chart
@@ -103,7 +103,7 @@ function buildCharts(sample) {
 function init() {
   d3.json(url).then((data) => {
     // Get the names field
-    let namesField = data.names;
+    let names = data.names;
     // Use d3 to select the dropdown with id of `#selDataset`
     let selectedData = d3.select("selDataset");
 
@@ -118,7 +118,7 @@ function init() {
     let sample = names[0]
 
     buildMetadata(sample),
-    buildcharts(sample),
+    buildCharts(sample),
     init
    
     })
@@ -130,7 +130,7 @@ function optionChanged(value) {
   // Build charts and metadata panel each time a new sample is selected
   d3.selectAll("#selDataset").on("change",
   buildMetadata(value),
-  buildcharts(value),
+  buildCharts(value),
   init
   )
 
