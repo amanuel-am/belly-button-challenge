@@ -34,7 +34,7 @@ function buildCharts(sample) {
     let samples = data.samples;
 
     // Filter the samples for the object with the desired sample number
-    let SampleFilter = samples.filter(item => item.id == sample)
+    let SampleFilter = samples.filter(item => item.id === sample)
     let sampleValue = SampleFilter[0];
     
     // Get the otu_ids, otu_labels, and sample_values
