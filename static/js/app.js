@@ -101,7 +101,7 @@ function buildCharts(sample) {
 
 // Function to run on page load
 function init() {
-  d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
+  d3.json(url).then((data) => {
     // Get the names field
     let namesField = data.names;
     // Use d3 to select the dropdown with id of `#selDataset`
